@@ -174,7 +174,7 @@ GROUP_GroupWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             DWORD dwStyle;
             RECT rect;
             GetClientRect(hWnd, &rect);
-            group->hListView = CreateWindowW(WC_LISTVIEW,
+            group->hListView = CreateWindowW(L"SysListView32",
                                              NULL,
                                              WS_CHILD | WS_VISIBLE | WS_OVERLAPPED,
                                              0, 0,
@@ -186,8 +186,8 @@ GROUP_GroupWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
                                              NULL);
             dwStyle = (GetWindowLong(group->hListView, GWL_STYLE) | LVS_SHOWSELALWAYS) & ~LVS_AUTOARRANGE;
             SetWindowLong(group->hListView, GWL_STYLE, dwStyle);
-            dwStyle = SendMessageA(group->hListView, LVM_GETEXTENDEDLISTVIEWSTYLE, 0, 0) /*| LVS_EX_BORDERSELECT*/;
-            SendMessageA(group->hListView, LVM_SETEXTENDEDLISTVIEWSTYLE, NULL/*LVS_EX_SNAPTOGRID*/, dwStyle);
+            // dwStyle = SendMessageA(group->hListView, LVM_GETEXTENDEDLISTVIEWSTYLE, 0, 0) /*| LVS_EX_BORDERSELECT*/;
+            // SendMessageA(group->hListView, LVM_SETEXTENDEDLISTVIEWSTYLE, NULL/*LVS_EX_SNAPTOGRID*/, dwStyle);
             InitUxTheme();
             SetWindowTheme(group->hListView, L"Explorer", NULL);
             group->hListLarge = ImageList_Create(GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON), ILC_COLOR24 | ILC_MASK, 1, 1);
