@@ -1145,7 +1145,7 @@ static VOID MAIN_CreateMDIWindow(VOID)
                       Globals.hInstance, &ccs);
 
     /* Reset the background of the MDI client window (default: COLOR_APPWORKSPACE + 1) */
-    SetClassLong(Globals.hMDIWnd, NULL/*GCLP_HBRBACKGROUND*/, (COLOR_WINDOW + 1));
+    SetClassLong(Globals.hMDIWnd, GCL_HBRBACKGROUND, (COLOR_WINDOW + 1));
 
     ShowWindow(Globals.hMDIWnd, SW_SHOW);
     UpdateWindow(Globals.hMDIWnd);
