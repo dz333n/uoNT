@@ -252,7 +252,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_PROGRAM_MANAGER     "Program Manager"
+    IDS_PROGRAM_MANAGER     "uoNT Program Manager"
     IDS_ERROR               "ERROR"
     IDS_WARNING             "WARNING"
     IDS_INFO                "Information"
