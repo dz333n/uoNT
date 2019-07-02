@@ -1138,7 +1138,7 @@ static VOID MAIN_CreateMDIWindow(VOID)
 
     /* Create MDI Window */
     Globals.hMDIWnd =
-        CreateWindowW(WC_MDICLIENT, NULL, WS_CHILD | WS_CLIPCHILDREN | WS_VSCROLL | WS_HSCROLL, // WS_CHILDWINDOW | ...
+        CreateWindowW(L"MDICLIENT", NULL, WS_CHILD | WS_CLIPCHILDREN | WS_VSCROLL | WS_HSCROLL, // WS_CHILDWINDOW | ...
                       rect.left, rect.top,
                       rect.right - rect.left, rect.bottom - rect.top,
                       Globals.hMainWnd, 0,
